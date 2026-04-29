@@ -1,0 +1,32 @@
+<view class="page">
+  <view wx:if="{{reminder}}" class="panel focus-panel">
+    <view class="row">
+      <view class="tag {{reminder.tagClass}}">{{reminder.statusText}}</view>
+      <view class="muted tiny">{{reminder.dueDate}}</view>
+    </view>
+
+    <view class="detail-title">{{reminder.title}}</view>
+    <view class="subtitle">{{reminder.petName}}</view>
+    <view wx:if="{{reminder.uncertain}}" class="notice">这是默认提醒日期，请按医生建议确认后修改。</view>
+
+    <view class="field">
+      <view class="label">提醒日期</view>
+      <picker mode="date" value="{{reminder.dueDate}}" bindchange="onDateChange">
+        <view class="select">{{reminder.dueDate}}</view>
+      </picker>
+      <view class="helper">改日期后会从“待确认”变为普通待办。</view>
+    </view>
+
+    <view class="field">
+      <view class="label">备注</view>
+      <textarea class="textarea" value="{{reminder.note}}" maxlength="120" bindinput="onNoteInput" placeholder="记录医生建议或注意事项" />
+    </view>
+
+    <button class="primary-btn section" hover-class="btn-press" bindtap="goRecord">标记完成</button>
+    <button class="ghost-btn section" hover-class="btn-press" loading="{{saving}}" disabled="{{saving}}" bindtap="save">{{saving ? '保存中' : '保存修改'}}</button>
+  </view>
+
+  <view wx:else class="panel">
+    <view class="empty">没有找到这条待办。</view>
+  </view>
+</view>

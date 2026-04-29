@@ -1,0 +1,5 @@
+.select {
+  display: flex;
+  align-items: center;
+  color: #3f4e47;
+}

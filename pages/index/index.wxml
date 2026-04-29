@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-copy">
+      <view class="title">宠物健康日历</view>
+      <view class="subtitle">疫苗、驱虫、体检，到点提醒，做完留档。</view>
+    </view>
+    <button class="ghost-btn add-btn" hover-class="btn-press" bindtap="goAddPet" aria-label="添加宠物">添加</button>
+  </view>
+
+  <view wx:if="{{!pets.length}}" class="panel section">
+    <view class="empty">
+      <view class="empty-title">先添加一只宠物</view>
+      <view class="subtitle">只需要名字和类型，也可以稍后补充日期。</view>
+      <button class="primary-btn section" hover-class="btn-press" bindtap="goAddPet">添加宠物</button>
+    </view>
+  </view>
+
+  <block wx:else>
+    <scroll-view class="pet-tabs section" scroll-x enhanced show-scrollbar="{{false}}">
+      <view
+        wx:for="{{pets}}"
+        wx:key="id"
+        class="pet-chip {{item.id === activePetId ? 'active' : ''}}"
+        data-id="{{item.id}}"
+        hover-class="chip-press"
+        bindtap="switchPet"
+        aria-label="切换到{{item.name}}"
+      >
+        {{item.name}}
+      </view>
+    </scroll-view>
+
+    <view wx:if="{{nextReminder}}" class="panel focus-panel section focus-card" hover-class="card-press" bindtap="goDetail" data-id="{{nextReminder.id}}" aria-label="查看最近待办详情">
+      <view class="row">
+        <view class="tag {{nextReminder.tagClass}}">{{nextReminder.statusText}}</view>
+        <view class="muted tiny">{{nextReminder.dueDate}}</view>
+      </view>
+      <view class="focus-label">下一件事</view>
+      <view class="focus-title">{{nextReminder.title}}</view>
+      <view class="subtitle">{{nextReminder.petName}} · {{nextReminder.countdownText}}</view>
+      <view wx:if="{{nextReminder.uncertain}}" class="notice">日期来自默认模板，请按医生建议确认。</view>
+    </view>
+
+    <view class="section row">
+      <view class="section-title">待办</view>
+      <button class="ghost-btn small-btn" hover-class="btn-press" bindtap="goHistory">历史</button>
+    </view>
+
+    <view class="list">
+      <view
+        wx:for="{{reminders}}"
+        wx:key="id"
+        class="reminder-item"
+        hover-class="card-press"
+        bindtap="goDetail"
+        data-id="{{item.id}}"
+        aria-label="查看{{item.title}}详情"
+      >
+        <view class="item-copy">
+          <view class="item-title">{{item.title}}</view>
+          <view class="muted tiny">{{item.petName}} · {{item.dueDate}}</view>
+        </view>
+        <view class="tag {{item.tagClass}}">{{item.statusText}}</view>
+      </view>
+    </view>
+
+    <view wx:if="{{!reminders.length}}" class="panel section">
+      <view class="empty">暂无待办，添加宠物后会自动生成健康事项。</view>
+    </view>
+  </block>
+
+  <view class="medical-note">仅作日程提醒和历史记录，具体方案请以宠物医生建议为准。</view>
+</view>

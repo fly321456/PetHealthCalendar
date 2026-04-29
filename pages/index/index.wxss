@@ -1,0 +1,113 @@
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.add-btn {
+  width: 136rpx;
+  flex: 0 0 136rpx;
+}
+
+.empty-title {
+  color: #1f2d28;
+  font-size: 34rpx;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pet-tabs {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.pet-chip {
+  display: inline-flex;
+  align-items: center;
+  min-width: 112rpx;
+  height: 72rpx;
+  margin-right: 16rpx;
+  padding: 0 28rpx;
+  border: 1rpx solid #dce4d8;
+  border-radius: 999rpx;
+  color: #3f4e47;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.pet-chip.active {
+  color: #ffffff;
+  border-color: #2f6f5e;
+  background: #2f6f5e;
+}
+
+.chip-press,
+.card-press {
+  opacity: 0.86;
+}
+
+.focus-card {
+  background: #fafffc;
+}
+
+.focus-label {
+  margin-top: 26rpx;
+  color: #758078;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.focus-title {
+  margin-top: 8rpx;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.notice {
+  margin-top: 20rpx;
+  padding: 16rpx 18rpx;
+  border-radius: 12rpx;
+  color: #7a5613;
+  background: #fff4dc;
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.small-btn {
+  width: 120rpx;
+  min-height: 64rpx;
+  line-height: 64rpx;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  padding: 24rpx;
+  border: 1rpx solid #dce4d8;
+  border-radius: 12rpx;
+  background: #ffffff;
+}
+
+.item-copy {
+  min-width: 0;
+}
+
+.item-title {
+  margin-bottom: 8rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 1.35;
+}

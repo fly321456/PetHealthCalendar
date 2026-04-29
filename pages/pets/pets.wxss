@@ -1,0 +1,49 @@
+.header-copy {
+  min-width: 0;
+}
+
+.add-btn {
+  width: 136rpx;
+  flex: 0 0 136rpx;
+}
+
+.empty-title {
+  color: #1f2d28;
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pet-card {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 24rpx;
+  border: 1rpx solid #dce4d8;
+  border-radius: 12rpx;
+  background: #ffffff;
+}
+
+.pet-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 999rpx;
+  color: #2f6f5e;
+  background: #e6f2ed;
+  font-weight: 700;
+}
+
+.pet-info {
+  min-width: 0;
+}
+
+.pet-name {
+  margin-bottom: 8rpx;
+  color: #1f2d28;
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 1.25;
+}

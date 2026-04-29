@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pet-form/pet-form",
+    "pages/reminder-detail/reminder-detail",
+    "pages/record-form/record-form",
+    "pages/history/history",
+    "pages/pets/pets"
+  ],
+  "window": {
+    "navigationBarTitleText": "宠物健康日历",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f7f3"
+  },
+  "tabBar": {
+    "color": "#7a8175",
+    "selectedColor": "#2f6f5e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "日历"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/pets/pets",
+        "text": "宠物"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
