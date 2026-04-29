@@ -5,7 +5,8 @@ function decorate(item) {
   if (item.uncertain) {
     return Object.assign({}, item, {
       statusText: '待确认',
-      tagClass: 'warn'
+      tagClass: 'warn',
+      dueShort: item.dueDate ? item.dueDate.slice(5).replace('-', '/') : '待定'
     })
   }
 
@@ -18,7 +19,8 @@ function decorate(item) {
   }
   return Object.assign({}, item, {
     statusText: map[status][0],
-    tagClass: map[status][1]
+    tagClass: map[status][1],
+    dueShort: item.dueDate ? item.dueDate.slice(5).replace('-', '/') : '待定'
   })
 }
 

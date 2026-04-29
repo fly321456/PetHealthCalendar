@@ -1,8 +1,14 @@
 <view class="page">
   <view wx:if="{{reminder}}" class="panel focus-panel">
-    <view class="row">
-      <view class="tag {{reminder.tagClass}}">{{reminder.statusText}}</view>
-      <view class="muted tiny">{{reminder.dueDate}}</view>
+    <view class="row detail-top">
+      <view>
+        <view class="eyebrow">待办详情</view>
+        <view class="tag {{reminder.tagClass}}">{{reminder.statusText}}</view>
+      </view>
+      <view class="detail-date">
+        <view class="date-short">{{reminder.dueShort}}</view>
+        <view class="tiny muted">提醒日期</view>
+      </view>
     </view>
 
     <view class="detail-title">{{reminder.title}}</view>
@@ -12,7 +18,10 @@
     <view class="field">
       <view class="label">提醒日期</view>
       <picker mode="date" value="{{reminder.dueDate}}" bindchange="onDateChange">
-        <view class="select">{{reminder.dueDate}}</view>
+        <view class="select">
+          <text>{{reminder.dueDate}}</text>
+          <text class="select-action">修改</text>
+        </view>
       </picker>
       <view class="helper">改日期后会从“待确认”变为普通待办。</view>
     </view>
@@ -22,8 +31,10 @@
       <textarea class="textarea" value="{{reminder.note}}" maxlength="120" bindinput="onNoteInput" placeholder="记录医生建议或注意事项" />
     </view>
 
-    <button class="primary-btn section" hover-class="btn-press" bindtap="goRecord">标记完成</button>
-    <button class="ghost-btn section" hover-class="btn-press" loading="{{saving}}" disabled="{{saving}}" bindtap="save">{{saving ? '保存中' : '保存修改'}}</button>
+    <view class="action-stack section">
+      <button class="primary-btn" hover-class="btn-press" bindtap="goRecord">标记完成</button>
+      <button class="ghost-btn" hover-class="btn-press" loading="{{saving}}" disabled="{{saving}}" bindtap="save">{{saving ? '保存中' : '保存修改'}}</button>
+    </view>
   </view>
 
   <view wx:else class="panel">

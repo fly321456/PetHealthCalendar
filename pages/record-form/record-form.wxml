@@ -1,20 +1,34 @@
 <view class="page">
   <view wx:if="{{reminder}}">
-    <view class="title">完成记录</view>
-    <view class="subtitle">{{reminder.petName}} · {{reminder.title}}</view>
+    <view class="page-header">
+      <view class="header-copy">
+        <view class="eyebrow">完成记录</view>
+        <view class="title">保存这次处理</view>
+        <view class="subtitle">{{reminder.petName}} · {{reminder.title}}</view>
+      </view>
+    </view>
 
     <view class="panel section">
+      <view class="block-title">记录信息</view>
+      <view class="subtitle">完成后会进入历史记录，也可以生成下一次提醒。</view>
+
       <view class="field">
         <view class="label">完成日期</view>
         <picker mode="date" value="{{form.completedDate}}" data-field="completedDate" bindchange="onDateChange">
-          <view class="select">{{form.completedDate}}</view>
+          <view class="select">
+            <text>{{form.completedDate}}</text>
+            <text class="select-action">选择</text>
+          </view>
         </picker>
       </view>
 
       <view class="field">
         <view class="label">下次提醒日期</view>
         <picker mode="date" value="{{form.nextDueDate}}" data-field="nextDueDate" bindchange="onDateChange">
-          <view class="select">{{form.nextDueDate || '不生成下次提醒'}}</view>
+          <view class="select">
+            <text>{{form.nextDueDate || '不生成下次提醒'}}</text>
+            <text class="select-action">选择</text>
+          </view>
         </picker>
         <view class="helper">系统按默认周期生成，你可以按医生建议修改。</view>
       </view>

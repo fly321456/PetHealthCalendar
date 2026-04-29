@@ -22,6 +22,17 @@ Mobile-first utility app for pet health reminders. The interface should feel cal
 - Typography: system sans-serif, no negative letter spacing.
 - Icons: no emoji as structural icons. This MVP uses text labels until an icon library is introduced.
 
+## Stitch Theme Alignment
+
+- Stitch project: `projects/12347403776282418268`.
+- Theme name: Warm Utility.
+- The product should feel like a compact health utility, not a marketing page.
+- Favor low-contrast outlines, tonal surfaces, and tight 8px rhythm over decorative shadows.
+- Use white only for meaningful interactive surfaces: task cards, form groups, pet records, and empty states.
+- Do not nest cards. For hierarchy inside a card, use dividers, labels, or muted surface rows.
+- Home first viewport anatomy: page header, pet switcher, next reminder focus card, compact status summary.
+- Lists should scan by date/status first, then item title and pet name.
+
 ## Color Tokens
 
 - Page: `#f7f8f4`

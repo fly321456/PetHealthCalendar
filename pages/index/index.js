@@ -7,7 +7,8 @@ function decorateReminder(item) {
       status: 'uncertain',
       statusText: '待确认',
       tagClass: 'warn',
-      countdownText: '请确认日期'
+      countdownText: '请确认日期',
+      dueShort: item.dueDate ? item.dueDate.slice(5).replace('-', '/') : '待定'
     })
   }
 
@@ -27,16 +28,30 @@ function decorateReminder(item) {
     status,
     statusText: statusMap[status][0],
     tagClass: statusMap[status][1],
-    countdownText
+    countdownText,
+    dueShort: item.dueDate ? item.dueDate.slice(5).replace('-', '/') : '待定'
   })
+}
+
+function buildSummary(reminders) {
+  const uncertainCount = reminders.filter(item => item.uncertain).length
+  const overdueCount = reminders.filter(item => item.status === 'overdue').length
+
+  return [
+    { label: '当前待办', value: reminders.length, helper: '未完成事项' },
+    { label: '需确认', value: uncertainCount, helper: '默认日期' },
+    { label: '已逾期', value: overdueCount, helper: overdueCount ? '尽快处理' : '暂无压力' }
+  ]
 }
 
 Page({
   data: {
     pets: [],
     activePetId: '',
+    activePetName: '',
     reminders: [],
-    nextReminder: null
+    nextReminder: null,
+    summary: []
   },
 
   onShow() {
@@ -59,8 +74,10 @@ Page({
     this.setData({
       pets,
       activePetId,
+      activePetName: (pets.find(item => item.id === activePetId) || {}).name || '',
       reminders,
-      nextReminder: reminders[0] || null
+      nextReminder: reminders[0] || null,
+      summary: buildSummary(reminders)
     })
   },
 

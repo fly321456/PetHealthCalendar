@@ -1,5 +1,7 @@
 .select {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
   color: #3f4e47;
 }

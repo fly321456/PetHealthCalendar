@@ -1,17 +1,6 @@
-.header-copy {
-  min-width: 0;
-}
-
 .add-btn {
   width: 136rpx;
   flex: 0 0 136rpx;
-}
-
-.empty-title {
-  color: #1f2d28;
-  font-size: 32rpx;
-  font-weight: 700;
-  line-height: 1.25;
 }
 
 .pet-card {
@@ -37,6 +26,7 @@
 }
 
 .pet-info {
+  flex: 1;
   min-width: 0;
 }
 
@@ -46,4 +36,15 @@
   font-size: 32rpx;
   font-weight: 700;
   line-height: 1.25;
+}
+
+.pet-type {
+  flex: 0 0 auto;
+}
+
+.summary-helper {
+  margin-top: 4rpx;
+  color: #758078;
+  font-size: 20rpx;
+  line-height: 1.3;
 }
