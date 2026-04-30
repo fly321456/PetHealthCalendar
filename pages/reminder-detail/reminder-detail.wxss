@@ -4,7 +4,7 @@
 
 .detail-date {
   min-width: 112rpx;
-  padding: 14rpx 16rpx;
+  padding: 12rpx 16rpx;
   border: 1rpx solid #dce4d8;
   border-radius: 12rpx;
   background: #eef5ef;
@@ -19,16 +19,16 @@
 }
 
 .detail-title {
-  margin-top: 24rpx;
+  margin-top: 22rpx;
   color: #1f2d28;
-  font-size: 44rpx;
+  font-size: 42rpx;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .notice {
-  margin-top: 20rpx;
-  padding: 16rpx 18rpx;
+  margin-top: 18rpx;
+  padding: 14rpx 16rpx;
   border-radius: 12rpx;
   color: #7a5613;
   background: #fff4dc;
@@ -44,8 +44,22 @@
   color: #3f4e47;
 }
 
+.textarea {
+  height: 132rpx;
+  min-height: 124rpx;
+  padding-top: 18rpx;
+}
+
 .action-stack {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 14rpx;
+  margin-top: 22rpx;
+}
+
+.action-stack > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
